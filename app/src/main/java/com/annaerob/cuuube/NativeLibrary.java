@@ -6,6 +6,6 @@ public class NativeLibrary {
     }
 
     public static native void init(int width, int height);
-    public static native void step(float x, float y);
     public static native void step();
+    public static native void render(float x, float y);
 }

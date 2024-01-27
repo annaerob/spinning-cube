@@ -10,7 +10,8 @@ import javax.microedition.khronos.egl.EGLDisplay;
 import javax.microedition.khronos.opengles.GL10;
 
 class View extends GLSurfaceView {
-    public static AngleStore store;
+    public static float ANGLE_X = 0;
+    public static float ANGLE_Y = 0;
 
     protected int redSize = 5;
     protected int greenSize = 6;
@@ -27,7 +28,7 @@ class View extends GLSurfaceView {
         setEGLConfigChooser(new ConfigChooser());
         setRenderer(new Renderer());
 
-        store = new AngleStore();
+
     }
 
     private static class ContextFactory implements GLSurfaceView.EGLContextFactory {
@@ -70,7 +71,7 @@ class View extends GLSurfaceView {
     private static class Renderer implements GLSurfaceView.Renderer {
         @Override
         public void onDrawFrame(GL10 gl) {
-            NativeLibrary.step(store.incX(), store.incY());
+            NativeLibrary.step();
         }
 
         @Override

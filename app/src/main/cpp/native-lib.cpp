@@ -366,7 +366,12 @@ JNIEXPORT void JNICALL Java_com_annaerob_cuuube_NativeLibrary_init(JNIEnv * env,
 }
 
 JNIEXPORT void JNICALL
-Java_com_annaerob_cuuube_NativeLibrary_step__(JNIEnv * env, jclass cl) {
+Java_com_annaerob_cuuube_NativeLibrary_step(JNIEnv * env, jclass cl) {
     render(0, 0);
+}
+
+JNIEXPORT void JNICALL
+Java_com_annaerob_cuuube_NativeLibrary_callrender(JNIEnv * env, jclass cl, jint x, jint y) {
+    render(x, y);
 }
 }
